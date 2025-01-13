@@ -1,0 +1,35 @@
+.lol{
+    box-shadow: 3px 3px 0px 1px #000;
+}
+.lol2{
+    box-shadow: 3px 3px 0px 1px #000;
+}
+
+.lassi{
+    background: white !important;
+}
+.pusi{
+    background: #34d399 !important;
+    padding: 10px 20px 10px 20px !important;
+}
+.scrollx {
+    scrollbar-width: thin;
+    -ms-overflow-style: none;
+}
+
+.scrollx::-webkit-scrollbar {
+    display: none;
+    width: 8px;
+}
+.iio{
+    text-shadow: 1px 1px 0px #000;
+}
+
+iframe{
+    position: relative !important;
+    z-index: 0 !important;
+}
+.paypal-button-container{
+    position: relative !important;
+    z-index: 0 !important;
+}
