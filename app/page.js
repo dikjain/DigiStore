@@ -7,7 +7,7 @@ import ProductList from './_components/ProductList'
     <div>
       <Hero/>
 
-      <div className='p-10 max-[500px]:px-10 px-28 md:px-36 lg:px-48 bg-tertiary' >
+      <div className='p-10 max-[600px]:px-5 px-28 md:px-36 lg:px-48 bg-tertiary' >
         <ProductList/>
       </div>
     </div>
