@@ -54,10 +54,10 @@ function ProductCard({ product, item, index, refresh , setRefresh}) {
     <Card className={`p-3 ${index % 3 == 0 ? 'bg-secondary' : index % 3 == 1 ? 'bg-tertiary' : 'bg-primary'} ${isHome ? 'lassi' : ''} lol`}>
       <Link href={` /product/${product?.id || item?.id}`}>
         <Image src={product?.image || item?.image} alt={product?.name || item?.title || product?.title || "Product Image"} loading='lazy' height={250} width={300} className='mx-auto lol2 min-h-[250px] max-h-[150px] bg-white object-contain border-2 border-black shadow-md rounded-md' />
-      </Link>a
+      </Link>
       <div className={`mt-3 ${isHome ? 'pusi' : ''} ${item ? `${index % 3 == 0 ? 'bg-primary' : index % 3 == 1 ? 'bg-secondary' : 'bg-tertiary'}  text-center flex ${isHome ? 'pusi' : ''} items-center justify-between p-3 border-2 border-black lol` : ''}`}>
         <Link href={`/product/${product?.id || item?.id}`}><h2 className='text-2xl font-bold line-clamp-1'>{product?.name || item?.title || product?.title}</h2></Link>
-        <h2 claassName={`text-2xl ${isHome ? 'text-white' : ''} ${item ? 'text-white' : isExplore ? 'text-white' : 'text-secondary'} font-bold mt-2`}>${product?.price || item?.price}</h2>
+        <h2 className={`text-2xl ${isHome ? 'text-white' : ''} ${item ? 'text-white' : isExplore ? 'text-white' : 'text-secondary'} font-bold mt-2`}>${product?.price || item?.price}</h2>
         <div className='min-[500px]:flex items-center gap-2 mt-3 justify-between'>
           {product?.user?.image && <div className='flex items-center gap-2'>
             <Image src={product?.user?.image} alt={product?.user?.name} width={20} height={20} className='rounded-full' />
