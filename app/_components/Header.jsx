@@ -55,7 +55,7 @@ function Header() {
                 ))}
             </ul>
 
-            <div className={`flex gap-3 items-center border-b-2 border-black justify-end ${isMenuOpen ? 'max-[600px]:flex  max-[600px]:absolute max-[600px]:top-[calc(100%+200px)] max-[600px]:left-0 max-[600px]:right-0 max-[600px]:bg-primary max-[600px]:w-full max-[600px]:p-4 max-[600px]:border-t-2 max-[600px]:border-black' : 'max-[600px]:hidden'}`}>
+            <div className={`flex gap-3 items-center max-[600px]:border-b-2 max-[600px]:border-black justify-end ${isMenuOpen ? 'max-[600px]:flex  max-[600px]:absolute max-[600px]:top-[calc(100%+200px)] max-[600px]:left-0 max-[600px]:right-0 max-[600px]:bg-primary max-[600px]:w-full max-[600px]:p-4 max-[600px]:border-t-2 max-[600px]:border-black' : 'max-[600px]:hidden'}`}>
                 <CartList>
                     <div className='relative cursor-pointer hover:opacity-80 transition-opacity'>
                         <ShoppingBag />
