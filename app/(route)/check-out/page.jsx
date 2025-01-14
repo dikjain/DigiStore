@@ -12,6 +12,7 @@ import { Loader2Icon, MinusIcon, PlusIcon } from 'lucide-react';
 import Link from 'next/link';
 import { PayPalButtons } from '@paypal/react-paypal-js';
 import Three from '@/app/_components/three';
+import "../../extra.css";
 
 function CheckOut() {
   const { cart, total, setCart, checked } = useCart();
@@ -75,7 +76,7 @@ function CheckOut() {
   }
 
   return (
-    <div className='relative h-[calc(100vh-74px)] overflow-hidden'>
+    <div className='relative h-[calc(100vh-74px)] overflow-x-hidden scrolly'>
       <h2 className='text-black font-bold text-2xl mt-10'>CheckOut</h2>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-10'>
         <div className='flex flex-col gap-2 relative z-[50] h-fit'>
@@ -102,7 +103,7 @@ function CheckOut() {
               <div key={item.id} className={`flex gap-2 items-center lol w-full border-2 border-black p-3 relative justify-center ${index % 3 === 0 ? 'bg-tertiary' : index % 3 === 1 ? 'bg-secondary' : 'bg-primary'}`}>
                 <div className='flex items-center gap-2 w-[30%] justify-center h-fit '>
                   <Link href={`/product/${item.id}`}>
-                    <Image src={item.image} alt={item.title} width={100} height={100} className="lol border-2 border-black" />
+                    <Image src={item.image} alt={item.title} width={100} height={100} className="lol border-2 border-black bg-white" />
                   </Link>
                 </div>
                 <div className='flex gap-2 w-[70%] justify-between items-center'>
@@ -162,7 +163,7 @@ function CheckOut() {
         </div>
       </div>
 
-      <div className='absolute top-[50%] left-[50%]  max-[1200px]:hidden translate-x-[-50%] translate-y-[-50%]   scale-125 mt-[25px] w-full h-full z-[40] pointer-events-auto'>
+      <div className='absolute top-[50%] left-[50%]  max-[1200px]:hidden translate-x-[-50%] translate-y-[-50%]   scrolly  scale-125 mt-[25px] w-full h-full z-[40] pointer-events-auto'>
         <Three />
       </div>
     </div>

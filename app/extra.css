@@ -41,7 +41,9 @@ iframe{
 }
 
 
-
+.scrolly::-webkit-scrollbar{
+    display: none !important;
+}
 
 
 canvas{
