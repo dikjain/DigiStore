@@ -81,6 +81,10 @@ function CheckOut() {
       <h2 className='text-black font-bold text-2xl mt-10'>CheckOut</h2>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-10'>
         <div className='flex flex-col gap-2'>
+          {checked && cart.length == 0 && <div className='flex items-center gap-2 mt-20 justify-center'>
+            <p className='text-sm font-medium text-gray-500'>No items in cart</p>
+          </div>}
+          
           {loading ? (
             <div className="flex flex-col gap-2">
               {Array.from({ length: 4 }).map((_, index) => (
@@ -100,7 +104,7 @@ function CheckOut() {
               <div key={item.id} className={`flex gap-2 items-center lol w-full border-2 border-black p-3 relative justify-center ${index % 3 === 0 ? 'bg-tertiary' : index % 3 === 1 ? 'bg-secondary' : 'bg-primary'}`}>
                 <div className='flex items-center gap-2 w-[30%] justify-center h-fit '>
                   <Link  href={`/product/${item.id}`}>
-                    <Image src={item.image} alt={item.title} width={100} height={100} className="lol" />
+                    <Image src={item.image} alt={item.title} width={100} height={100} className="lol border-2 border-black" />
                   </Link>
                 </div>
                 <div className='flex gap-2 w-[70%] justify-between items-center'>

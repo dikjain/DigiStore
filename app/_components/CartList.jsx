@@ -59,7 +59,7 @@ function CartList({children}) {
             <div className="flex flex-col gap-2  max-h-[80vh] scrollx overflow-y-auto py-2  px-2">
             {cart?.map((item,index)=>(
                 <div key={index} className={`flex gap-2 items-center lol p-2 justify-around ${index%3 === 0 ? 'bg-tertiary' : index%3 === 1 ? 'bg-secondary' : 'bg-primary'}`}>
-                    <Image src={item[0]?.image} alt={item[0]?.title} width={100} className="lol" height={100}/>
+                    <Image src={item[0]?.image} alt={item[0]?.title} width={100} className="lol border-2 border-black" height={100}/>
                     <div>
                         <p className="text-lg max-[700px]:text-sm font-medium max-[700px]:max-w-[80px] max-w-[120px] truncate">{item[0]?.title}</p>
                         <p className="text-sm max-[700px]:text-xs font-semibold">${item[0]?.price}</p>
