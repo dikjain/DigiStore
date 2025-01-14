@@ -41,7 +41,7 @@ function Header() {
 
             <ul className={`flex gap-5 max-[600px]:gap-3 items-center justify-center h-[40px] w-[300px] box-border ${
                 isMenuOpen 
-                    ? 'max-[600px]:flex max-[600px]:flex-col max-[600px]:absolute max-[600px]:top-full max-[600px]:left-0 max-[600px]:right-0 max-[600px]:bg-primary max-[600px]:w-full max-[600px]:p-2 max-[600px]:h-auto max-[600px]:min-h-[200px] max-[600px]:shadow-lg max-[600px]:border-t-2 max-[600px]:border-black max-[600px]:animate-slideDown max-[600px]:z-50' 
+                    ? 'max-[600px]:flex max-[600px]:flex-col max-[600px]:absolute max-[600px]:top-full max-[600px]:left-0 max-[600px]:right-0 max-[600px]:bg-primary max-[600px]:w-full max-[600px]:p-2 max-[600px]:h-auto max-[600px]:min-h-[200px] max-[600px]:shadow-lg z-[10000] relative max-[600px]:border-t-2 max-[600px]:border-black max-[600px]:animate-slideDown' 
                     : 'max-[600px]:hidden'
             }`}>
                 {MenuList.map((item) => (
@@ -55,7 +55,7 @@ function Header() {
                 ))}
             </ul>
 
-            <div className={`flex gap-3 items-center justify-end ${isMenuOpen ? 'max-[600px]:flex  max-[600px]:absolute max-[600px]:top-[calc(100%+200px)] max-[600px]:left-0 max-[600px]:right-0 max-[600px]:bg-primary max-[600px]:w-full max-[600px]:p-4 max-[600px]:border-t-2 max-[600px]:border-black' : 'max-[600px]:hidden'}`}>
+            <div className={`flex gap-3 items-center border-b-2 border-black justify-end ${isMenuOpen ? 'max-[600px]:flex  max-[600px]:absolute max-[600px]:top-[calc(100%+200px)] max-[600px]:left-0 max-[600px]:right-0 max-[600px]:bg-primary max-[600px]:w-full max-[600px]:p-4 max-[600px]:border-t-2 max-[600px]:border-black' : 'max-[600px]:hidden'}`}>
                 <CartList>
                     <div className='relative cursor-pointer hover:opacity-80 transition-opacity'>
                         <ShoppingBag />

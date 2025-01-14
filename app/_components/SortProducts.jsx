@@ -20,7 +20,7 @@ function SortProducts({onSort}) {
     return (
     <div>
       <Select onValueChange={handleSortChange}>
-        <SelectTrigger className="w-[180px] max-[800px]:w-[100px] max-[600px]:w-[40px]">
+        <SelectTrigger className="w-[180px] max-[800px]:w-[100px] max-[600px]:w-[60px]">
           <SelectValue placeholder="Sort by" />
         </SelectTrigger>
         <SelectContent>

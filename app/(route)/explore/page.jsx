@@ -75,7 +75,7 @@ function Explore() {
         };
 
         window.addEventListener('resize', handleResize);
-        handleResize(); // Set initial width
+        handleResize();
 
         return () => {
             window.removeEventListener('resize', handleResize);

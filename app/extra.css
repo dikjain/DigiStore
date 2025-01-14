@@ -40,3 +40,13 @@ iframe{
     text-shadow: 3px 3px 0px #000;
 }
 
+
+
+
+
+canvas{
+    z-index: 100 !important;
+}
+.spline-canvas{
+    z-index: 100 !important;
+}
