@@ -33,3 +33,10 @@ iframe{
     position: relative !important;
     z-index: 0 !important;
 }
+.img-comp{
+    filter: drop-shadow(-5px 5px 0px #000);
+}
+.txt-shadow{
+    text-shadow: 3px 3px 0px #000;
+}
+

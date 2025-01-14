@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import ProductCard from './ProductCard'
 import axios from 'axios'
 import { Loader2Icon } from 'lucide-react'
+import Link from 'next/link'
 
 function ProductList() {
     const [products, setProducts] = useState([])
@@ -29,7 +30,7 @@ function ProductList() {
   return (
     <div className='mt-10'>
         <h2 className='text-xl font-bold flex items-center justify-between'>Featured 
-            <span ><Button className='bg-primary hover:bg-primary/80'>View All</Button></span>
+            <span ><Link href='/explore'><Button className='bg-primary hover:bg-primary/80'>View All</Button></Link></span>
         </h2>
 
         <div className='flex justify-center items-center'>
