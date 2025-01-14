@@ -56,7 +56,7 @@ function CartList({children}) {
             <SheetTitle>Cart <span className="text-sm text-gray-500">({cart?.length})</span></SheetTitle>
             <p className="text-lg font-bold text-center">Your Cart List</p>
             <SheetDescription className=" min-[700px]:p-[10px]">
-            <div className="flex flex-col gap-2  max-h-[78vh] scrollx overflow-y-auto py-2  px-2">
+            <div className="flex flex-col gap-2  max-h-[70vh] scrollx overflow-y-auto py-2  px-2">
             {cart?.map((item,index)=>(
                 <div key={index} className={`flex gap-2 items-center lol p-2 justify-around ${index%3 === 0 ? 'bg-tertiary' : index%3 === 1 ? 'bg-secondary' : 'bg-primary'}`}>
                     <Image src={item[0]?.image} alt={item[0]?.title} width={100} className="lol border-2 border-black" height={100}/>
