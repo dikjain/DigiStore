@@ -16,7 +16,7 @@ function Explore() {
     const [sort, setSort] = useState(null)
     const [windowWidth, setWindowWidth] = useState(0);
     const [noProducts, setNoProducts] = useState(false);
-    const [limit, setLimit] = useState(10);
+    const [limit, setLimit] = useState(9);
 
     const fetchProducts = async (_offset, lassi = 1) => {
         if (lassi) {

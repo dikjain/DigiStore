@@ -46,6 +46,11 @@ function AddProduct() {
             }
             toast.success('Product Added Successfully')
         } catch (error) {
+          if(formData?.description.length > 250){
+            toast.error("Description should be less than 250 characters")
+          }else{
+            toast.error("Something went wrong")
+          }
             console.log(error)
         }finally{
             setLoading(false)
@@ -108,7 +113,12 @@ function AddProduct() {
           </div>
           <div>
             <h4>Description</h4>
-            <Textarea placeholder="Enter Product Description" className="bg-primary h-[200px] max-h-[300px]" value={formData?.description} onChange={(e) => handleInputChange("description", e.target.value)}/>
+            <Textarea 
+              placeholder="Enter Product Description" 
+              className="bg-primary h-[200px] max-h-[300px]" 
+              value={formData?.description} 
+              onChange={(e) => handleInputChange("description", e.target.value.slice(0, 250))}
+            />
           </div>
           <div>
             <h4>Product Details(Optional)</h4>

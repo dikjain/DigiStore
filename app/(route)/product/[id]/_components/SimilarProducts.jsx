@@ -16,7 +16,7 @@ function SimilarProducts({ category }) {
 
   return (
     <div className='mt-5 bg-tertiary p-3 lol border-2 border-black'>
-      <h2 className="text-2xl font-bold">Similar Products</h2>
+      <h2 className="text-2xl font-bold">Products in this category</h2>
       <div className="flex items-center flex-wrap justify-around gap-2 mt-10 mb-10">
         {similarProducts?.map((product) => (
           <ProductCard key={product.id} product={product} />

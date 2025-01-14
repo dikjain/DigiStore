@@ -1,5 +1,5 @@
 "use client";
-import React, {useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "next/navigation";
 import Image from "next/image";
@@ -16,44 +16,66 @@ import { toast } from "sonner";
 import { useUser } from "@clerk/nextjs";
 
 function ProductPage() {
-  const {cart, setCart} = useCart();
+  const { cart, setCart } = useCart();
   const [product, setProduct] = useState(null);
-  const {user} = useUser();
+  const { user } = useUser();
   const [loading, setLoading] = useState(false);
   const [seller, setSeller] = useState(null);
   const { id } = useParams();
 
   const fetchProduct = async () => {
-    const res = await axios.get(`/api/products?id=${id}`);
-    setProduct(res.data[0].products);
-    setSeller(res.data[0].users);
-    console.log(res.data[0].products);
+    setLoading(true);
+    try {
+      const res = await axios.get(`/api/products?id=${id}`);
+      setProduct(res.data[0].products);
+      setSeller(res.data[0].users);
+      console.log(res.data[0].products);
+    } catch (error) {
+      console.error("Failed to fetch product", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const addItemToCart = async (productId) => {
     setLoading(true);
-    try{
-      if(user?.primaryEmailAddress?.emailAddress){
+    try {
+      if (user?.primaryEmailAddress?.emailAddress) {
         const res = await axios.post('/api/cart', { product: productId, email: user?.primaryEmailAddress?.emailAddress });
         setCart([...cart, res.data]);
         toast.success("Item added to cart");
-      }else{
+      } else {
         toast.error("Please login to add to cart");
       }
-    }catch(error){
-      toast.error("Something went wrong");  
-    }finally{
+    } catch (error) {
+      toast.error("Something went wrong");
+    } finally {
       setLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
     fetchProduct();
   }, []);
 
   if (!product) {
-    return <div>Loading...</div>;
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-5 min-h-[550px]">
+        <div className="animate-pulse flex items-center justify-center max-h-[500px] overflow-hidden bg-gray-300">
+          <div className="w-full h-[500px]"></div>
+        </div>
+        <div className="space-y-4">
+          <div className="h-8 bg-gray-300 rounded w-3/4"></div>
+          <div className="h-6 bg-gray-300 rounded w-1/2"></div>
+          <div className="h-10 bg-gray-300 rounded w-1/4"></div>
+          <div className="h-4 bg-gray-300 rounded w-full"></div>
+          <div className="h-4 bg-gray-300 rounded w-full"></div>
+          <div className="h-12 bg-gray-300 rounded w-full"></div>
+        </div>
+      </div>
+    );
   }
+
 
   return (
     <div className="mt-10 ">
@@ -83,9 +105,9 @@ function ProductPage() {
           </h2>
           <h2 className="text-xl text-gray-400 mt-5">{"Description :"}</h2>
           <h2 className="text-base font-medium mt-1 w-full min-h-[100px] p-2 bg-tertiary lol">
-            {product?.description} lorem99
+            {product?.description}
           </h2>
-          <Button disabled={loading} className="bg-primary w-full text-white mt-5" onClick={()=>addItemToCart(product?.id)}>
+          <Button disabled={loading} className="bg-primary w-full text-white mt-5" onClick={() => addItemToCart(product?.id)}>
             {loading ? <Loader2 className="animate-spin" /> : "Add to Cart"}
           </Button>
           <Accordion type="single" collapsible className="mt-5">
@@ -110,7 +132,7 @@ function ProductPage() {
           </Accordion>
         </div>
       </div>
-      <SimilarProducts category={product?.category} /> 
+      <SimilarProducts category={product?.category} />
     </div>
   );
 }
