@@ -47,7 +47,7 @@ function CartList({children}) {
 
   return (
     <div>
-      <Sheet open={isOpen} onOpenChange={setIsOpen} className="z-[102] relative">
+      <Sheet open={isOpen} onOpenChange={setIsOpen} className="z-[102]  relative">
         <SheetTrigger asChild>
           <div onClick={() => setIsOpen(true)}>{children}</div>
         </SheetTrigger>
