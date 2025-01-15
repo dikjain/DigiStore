@@ -14,7 +14,11 @@ function Home() {
           <Spline scene="https://prod.spline.design/it8qTJbBFOISljMe/scene.splinecode" />
         </div>
         <div className='hidden min-[801px]:block '>
-          <Spline scene="https://prod.spline.design/WM3SVaZhwQ1fD35t/scene.splinecode" />
+          <Spline 
+               width={1920}
+               height={1080}
+               scene="https://prod.spline.design/jJEXRt9EL5tkL2AL/scene.splinecode" 
+          />
         </div>
       </div>
       <Hero/>
