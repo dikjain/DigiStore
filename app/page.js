@@ -7,9 +7,9 @@ function Home() {
   return (
     <div className='relative'>
       <div className='absolute top-0 left-0 w-full h-full  z-[-1] bg-secondary'>
-        {/* <div className='hidden max-[500px]:block'>
+        <div className='hidden max-[500px]:block'>
           <Spline scene="https://prod.spline.design/KeVJW5pVNCQqhdnJ/scene.splinecode" />
-        </div> */}
+        </div>
         <div className='hidden min-[501px]:block min-[801px]:hidden'>
           <Spline scene="https://prod.spline.design/it8qTJbBFOISljMe/scene.splinecode" />
         </div>
