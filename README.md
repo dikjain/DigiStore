@@ -1,36 +1,163 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+E-Commerce Application
 
-## Getting Started
+This repository contains the implementation of a feature-rich e-commerce application built using Next.js, React, and various modern libraries. Below are the details and functionalities of the included files.
 
-First, run the development server:
+File 1: userListing
 
-```bash
+Description:
+
+This file is responsible for displaying the product listing for a user. It includes fetching product data, rendering loaders, and managing the display when no products are found.
+
+Key Features:
+
+Dynamic Fetching:
+
+Products are dynamically fetched on certain conditions using useEffect.
+
+Handles refresh state for re-fetching the product list.
+
+Responsive Design:
+
+Products are displayed in a responsive grid layout.
+
+Custom animations for loaders.
+
+Product Management:
+
+Conditional rendering based on product availability.
+
+Integration with ProductCard component.
+
+Add Product:
+
+Includes a link to add new products.
+
+Libraries Used:
+
+axios for API calls.
+
+Link for navigation.
+
+Custom components like Button and ProductCard.
+
+File 2: CheckOut
+
+Description:
+
+Manages the checkout process, including displaying items in the cart, handling cart updates, and integrating PayPal for payments.
+
+Key Features:
+
+Cart Management:
+
+Products are grouped and displayed with their respective quantities.
+
+Add or remove items dynamically using handleDelete and addItemToCart.
+
+Payment Integration:
+
+PayPal Buttons for payment processing.
+
+Displays payment success or error messages.
+
+Dynamic Loading:
+
+Shows loaders when cart data is being processed.
+
+Libraries Used:
+
+axios for API interactions.
+
+PayPalButtons for payment integration.
+
+sonner for toast notifications.
+
+Custom components like Button, Badge, and Image.
+
+File 3: AddProduct
+
+Description:
+
+A form to add a new product to the store. It handles image and file uploads, category selection, and form validation.
+
+Key Features:
+
+Form Management:
+
+Includes inputs for title, price, category, description, and product details.
+
+File and image upload functionality with ImageUpload component.
+
+Dynamic Validation:
+
+Limits description to 250 characters.
+
+Validates form fields before submission.
+
+Category Selection:
+
+Dropdown for predefined categories.
+
+API Integration:
+
+Sends form data to the backend API.
+
+Handles responses and errors with toast notifications.
+
+Libraries Used:
+
+axios for API interactions.
+
+lucide-react for icons.
+
+sonner for toast notifications.
+
+@clerk/nextjs for user authentication.
+
+Custom components like Select, Input, and Button.
+
+Technologies Used:
+
+Frontend: Next.js, React, TailwindCSS.
+
+Backend: API interactions via axios.
+
+State Management: Context API.
+
+Authentication: @clerk/nextjs.
+
+Payment Gateway: PayPal.
+
+Notifications: sonner.
+
+How to Run:
+
+Clone the repository:
+
+git clone <repository-url>
+
+Install dependencies:
+
+npm install
+
+Start the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Access the application at http://localhost:3000.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Future Enhancements:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Add product search and filtering capabilities.
 
-## Learn More
+Implement detailed order history for users.
 
-To learn more about Next.js, take a look at the following resources:
+Expand payment options.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Contribution:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contributions are welcome! Feel free to submit a pull request or raise an issue for any suggestions or bugs.
 
-## Deploy on Vercel
+License:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License. See the LICENSE file for more details.
