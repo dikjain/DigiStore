@@ -17,8 +17,7 @@ function Dashboard() {
         <TabsContent value="Purchase">
           <div className=" mt-10">
           <div className="text-2xl font-bold">Your Purchase History</div>
-          <div className="text-sm items-center justify-center flex mt-10 text-gray-500">Your Purchase History is Empty</div>
-
+          <div className="text-xl font-semibold items-center justify-center flex mt-14 text-gray-500">Your Purchase History is Empty</div>
           </div>
         </TabsContent>
       </Tabs>
