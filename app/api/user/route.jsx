@@ -12,8 +12,8 @@ export async function POST(req){
     if(userData.length <= 0){
         const newUser = await db.insert(usersTable).values({
             email: user?.primaryEmailAddress?.emailAddress,
-            name: user?.fullName,
-            image: user?.imageUrl,
+            name: user?.fullName || user?.unsafeMetadata?.name,
+            image: user?.imageUrl || null,
         }).returning(usersTable)
 
         return NextResponse.json(newUser)

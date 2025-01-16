@@ -45,13 +45,15 @@ function Header() {
                     : 'max-[700px]:hidden'
             }`}>
                 {MenuList.map((item) => (
+                    <Link href={item.path}>
                     <li 
-                        className='hover:border-b-2 px-2 py-1 hover:border-white text-black cursor-pointer font-bold max-[700px]:w-full max-[700px]:text-center max-[700px]:py-3 max-[700px]:hover:bg-gray-100 max-[700px]:transition-colors' 
+                        className=' min-[701px]:hover:border-b-2 px-2 py-1  min-[701px]:hover:border-white text-black cursor-pointer font-bold max-[700px]:w-screen max-[700px]:text-center max-[700px]:py-3 max-[700px]:hover:bg-gray-100 max-[700px]:transition-colors' 
                         key={item.path}
                         onClick={() => setIsMenuOpen(false)}
-                    >
-                        <Link href={item.path}>{item.name}</Link>
+                        >
+                        <p>{item.name}</p>
                     </li>
+                 </Link>
                 ))}
             </ul>
 

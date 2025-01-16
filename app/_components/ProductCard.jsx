@@ -64,7 +64,7 @@ function ProductCard({ product, item, index, refresh , setRefresh}) {
             <h2 className='text-sm text-gray-600'>{product?.user?.name || item?.user?.name}</h2>
           </div>}
           {item && <ProductEditableBox children={<div className='flex flex-col gap-2'>
-            <div className='flex items-center justify-center bg-tertiary lol gap-2 w-full hover:bg-tertiary/80 cursor-pointer text-white p-1 rounded-md'><Pencil className='text-black' />Edit</div>
+            <div onClick={()=>router.push(`/edit/${product?.id || item?.id}`)} className='flex items-center justify-center bg-tertiary lol gap-2 w-full hover:bg-tertiary/80 cursor-pointer text-white p-1 rounded-md'><Pencil className='text-black' />Edit</div>
             <div className='flex items-center justify-center bg-secondary lol gap-2 w-full hover:bg-secondary/80 cursor-pointer text-white p-1 rounded-md'><ChartLine className='text-black' />Analytics</div>
             <DialogWindow  deleteProduct={()=>deleteProduct(product?.id || item?.id)} refresh={refresh}><div className='flex items-center justify-center bg-primary lol gap-2 w-full hover:bg-primary/80 cursor-pointer text-white p-1 rounded-md'><Trash className='text-black' />Delete</div></DialogWindow>
           </div>} >

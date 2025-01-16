@@ -15,6 +15,7 @@ function Provider({children}) {
 
   useEffect(()=>{
     user && CheckIsNewUser()
+    console.log(user)
   },[user])
 
   return (
