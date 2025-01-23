@@ -78,9 +78,9 @@ function CheckOut() {
   return (
     <div className='relative h-[calc(100vh-74px)] overflow-x-hidden scrolly'>
       <h2 className='text-black font-bold text-2xl mt-10'>CheckOut</h2>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-10'>
-        <div className='flex flex-col gap-2 relative z-[50] h-fit'>
-          {checked && cart.length === 0 && <div className='flex items-center gap-2 mt-20 justify-center'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-10  '>
+        <div className='flex flex-col gap-2 relative z-[50] h-fit max-h-[55vh] overflow-y-auto pip p-2 border-2 border-black'>
+          {checked && cart.length === 0 && <div className='flex items-center gap-2 mt-20 justify-center '>
             <p className='text-sm font-medium text-gray-500'>No items in cart</p>
           </div>}
           

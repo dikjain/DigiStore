@@ -25,8 +25,12 @@ function ProductCard({ product, item, index, refresh , setRefresh}) {
     try{
       if(user?.primaryEmailAddress?.emailAddress){
         const res = await axios.post('/api/cart', { product: productId, email: user?.primaryEmailAddress?.emailAddress });
-        setCart([...cart, res.data]);
-        toast.success("Item added to cart");
+        if(res.data){
+          console.log(res.data);
+          
+          setCart(prevCart => [...prevCart, res.data]);
+          toast.success("Item added to cart");
+        }
       }else{
         toast.error("Please login to add to cart");
       }

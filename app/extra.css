@@ -59,3 +59,23 @@ canvas{
 .cl-internal-df7v37{
     display: none !important;
 }
+.imgbox{
+    filter: drop-shadow(1px 1px 0px #000);
+    
+}
+.pip::-webkit-scrollbar{
+    width: 8px;
+    height: 4px;
+    background-color: transparent;
+}
+
+.pip::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+
+.pip::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+}

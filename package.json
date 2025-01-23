@@ -23,6 +23,7 @@
     "@splinetool/runtime": "^1.9.59",
     "@tabler/icons-react": "^3.28.1",
     "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
     "class-variance-authority": "^0.7.1",
     "cloudinary": "^2.5.1",
     "clsx": "^2.1.1",
