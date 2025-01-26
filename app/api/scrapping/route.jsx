@@ -5,9 +5,8 @@ import { NextResponse } from 'next/server';
 export async function GET(req) {
   try {
     const { searchParams } = new URL(req.url);
-    const query = searchParams.get('q') || 'JavaScript tutorials'; // Default search query
+    const query = searchParams.get('q') || 'JavaScript tutorials'; 
     
-    // Scrape YouTube
     const ytUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
     const ytResponse = await axios.get(ytUrl, {
       headers: {
@@ -91,7 +90,6 @@ export async function GET(req) {
       }
     });
 
-    // Scrape Reddit
     const redditUrl = `https://www.reddit.com/search/.json?q=${encodeURIComponent(query)}`;
     const redditResponse = await axios.get(redditUrl, {
       headers: {

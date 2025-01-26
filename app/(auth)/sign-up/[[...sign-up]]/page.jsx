@@ -44,20 +44,15 @@ export default function SignUp() {
 
     setIsLoading(true);
     try {
-      // Step 1: Create the user with required fields
       await signUp.create({
         emailAddress,
         password,
       });
-
-      // Step 2: Update metadata with custom fields
       await signUp.update({
         unsafeMetadata: {
           name,
         }
       });
-
-      // Step 3: Trigger email verification
       await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
       setPendingVerification(true);
     } catch (err) {
